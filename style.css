@@ -1,3 +1,83 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+}
+
+.side-menu a {
+  color: #fff;
+  display: block;
+  padding: 8px 32px 8px 32px;
+  transition: 0.3s;
+}
+
+.mobile-nav-search-box {
+  margin-top: 10px;
+}
+
+.open-btn {
+  display: none;
+  margin: 10px;
+}
+
+.side-menu a.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  padding: 0;
+  font-size: 25px;
+}
+
+.search-box {
+  display: inline-block;
+}
+
+#search-btn { 
+  /* padding: 10px; */
+  display: inline;
+  margin-right: 10px;
+}
+
+.input-box {
+  display: none;
+}
+
+.input-box input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-right: 8px;
+}
+
+.input-box .go-btn {
+  background-color: #eee;
+  border: none;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
 .head-line {
   display: flex;
   justify-content: center;
@@ -20,7 +100,7 @@
 .menus button {
   border: none;
   background: none;
-  margin: 5px;
+  margin: 10px 5px;
 }
 
 .menus button:hover {
@@ -28,12 +108,35 @@
   border-radius: 4px;
 }
 
-.news-list {
+.news-item {
   border-bottom: 2px solid black;
-  padding: 1em 0;
+  padding: 1em;
 }
 
 .news-image {
   max-width: 100%;
   max-height: 300px;
+}
+
+/* .hide {
+  display: none;
+} */
+
+.news-list h2 {
+  margin-top: 10px;
+}
+
+
+@media screen and (max-width: 50em) {
+  .open-btn {
+    display: inline-block;
+  }
+
+  .menus {
+    display: none;
+  }
+
+  .news-list {
+    border-bottom: 1px solid gray;
+  }
 }
