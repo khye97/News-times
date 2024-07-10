@@ -3,8 +3,8 @@ let newsList = [];
 
 // 뉴스 리스트를 가져오는 함수
 const getLatestNews = async () => {
-  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-  //const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
+  //const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+  const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
   const response = await fetch(url);
   const data = await response.json();
   newsList = data.articles;
