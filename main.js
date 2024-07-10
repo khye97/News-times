@@ -3,8 +3,8 @@ let newsList = [];
 
 // 뉴스 리스트를 가져오는 함수
 const getLatestNews = async () => {
-  //const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-  const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
+  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+  //const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
   const response = await fetch(url);
   const data = await response.json();
   newsList = data.articles;
@@ -55,10 +55,10 @@ function closeNav(){
 }
 
 function openSearch(){
-  let inputBox = document.querySelector('.input-box');
-  if (inputBox.style.display == "none"){
-    inputBox.style.display = "inline";
+  //let inputBox = document.querySelector('.input-box');
+  if (document.querySelector('.input-box').style.display == "none"){
+    document.querySelector('.input-box').style.display = "inline";
   } else {
-    inputBox.style.display = "none";
+    document.querySelector('.input-box').style.display = "none";
   }
 }
