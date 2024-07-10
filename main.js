@@ -3,8 +3,8 @@ let newsList = [];
 
 // 뉴스 리스트를 가져오는 함수
 const getLatestNews = async () => {
-  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-  //const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
+  //const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+  const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`);
   const response = await fetch(url);
   const data = await response.json();
   newsList = data.articles;
@@ -21,19 +21,25 @@ const render = () => {
   const newsHTML = newsList.map(news => `
     <div class="row news-item">
       <div class="col-lg-4">
-        <img class="news-image" src=${news.urlToImage}>
+        <img class="news-image" onerror="this.src='image/no_img.jpg'; this.onerror=null;" src=${news.urlToImage == null
+          ? "image/no_img.jpg" : news.urlToImage}>
       </div>
       <div class="col-lg-8">
         <h2>${news.title}</h2>
-        <p>${news.description}</p>
-        <div>${news.source.name} * ${news.publishedAt}</div>
+        <p>
+          ${news.description == null || news.description == ""
+            ? "내용없음"
+            : news.description.length > 200
+            ? news.description.substring(0, 200) + "..."
+            : news.description}
+        </p>
+        <div>${news.source.name == null || news.source.name == ""
+              ? news.source.name = "no source" : news.source.name} * ${moment(news.publishedAt).fromNow()}</div>
       </div>
     </div><!--row-->`).join('');
 
   document.getElementById("news-list").innerHTML = newsHTML;
 }
-
-
 
 
 
