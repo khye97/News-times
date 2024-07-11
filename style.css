@@ -16,6 +16,10 @@ a {
   margin-top: 10px;
 }
 
+#main-logo {
+  cursor: pointer;
+}
+
 .icon {
   padding: 10px;
   font-size: 20px;
@@ -136,6 +140,7 @@ a {
 }
 
 .alert-danger {
+  margin-top: 20px;
   font-size: 20px;
   text-align: center;
 }
