@@ -69,10 +69,14 @@ a {
 }
 
 .side-menu a {
-  color: #fff;
+  color: gray;
   display: block;
   padding: 8px 32px 8px 32px;
   transition: 0.3s;
+}
+
+.side-menu a:hover {
+  color: #fff;
 }
 
 .side-menu a.close-btn {
@@ -129,6 +133,11 @@ a {
 
 .news-list h2 {
   margin-top: 10px;
+}
+
+.alert-danger {
+  font-size: 20px;
+  text-align: center;
 }
 
 
