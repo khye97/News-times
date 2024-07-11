@@ -21,6 +21,10 @@ a {
   font-size: 20px;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 .nav-search-box .open-btn {
   display: none;
 }
