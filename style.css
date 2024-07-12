@@ -12,12 +12,8 @@ a {
   color: black;
 }
 
-.head-line-section {
+.nav-search-box {
   margin-top: 10px;
-}
-
-#main-logo {
-  cursor: pointer;
 }
 
 .icon {
@@ -73,10 +69,12 @@ a {
 }
 
 .side-menu a {
+  text-decoration: none;
   color: gray;
   display: block;
   padding: 8px 32px 8px 32px;
   transition: 0.3s;
+  font-size: 17px;
 }
 
 .side-menu a:hover {
@@ -92,33 +90,33 @@ a {
 }
 
 .head-line {
+  margin-top: 1em;
   display: flex;
   justify-content: center;
-  margin-top: 1em;
 }
 
 .head-line svg {
   width: 400px;
 }
 
-.menus {
+.menus { 
+  margin-top: 1em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1em;
   border-top: 1px solid #ebebeb;
-  border-bottom: 4px double black;
+  border-bottom: 4px double #000;
 }
 
 .menus button {
   border: none;
   background: none;
-  margin: 10px 5px;
+  margin: 5px;
 }
 
 .menus button:hover {
   background-color: #eee;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .news-item {
@@ -126,24 +124,24 @@ a {
   padding: 1em;
 }
 
+.news-item .title {
+  text-decoration: none;
+  color: black;
+}
+
 .news-image {
   max-width: 100%;
   max-height: 300px;
 }
 
-.hide {
-  display: none;
-}
-
-.news-list h2 {
-  margin-top: 10px;
-}
-
-.alert-danger {
+.error-message {
   margin-top: 20px;
-  font-size: 20px;
   text-align: center;
+  font-size: 20px;
 }
+
+
+
 
 
 @media screen and (max-width: 50em) {
@@ -157,5 +155,9 @@ a {
 
   .news-list {
     border-bottom: 1px solid gray;
+  }
+
+  .image-box {
+    margin-bottom: 10px;
   }
 }
