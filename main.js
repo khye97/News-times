@@ -6,13 +6,15 @@ let newsList = [];
 const menus = document.querySelectorAll('.menus button');
 const sideMenus = document.querySelectorAll('.side-menu-items a');
 const searchValue = document.getElementById('search-input');
+let menuBtn = document.querySelectorAll('.menu-btn');
 let totalResults = 0;
 let page = 1;
 const pageSize = 10;
 const groupSize = 5;
-let menuBtn = document.querySelectorAll('.menu-btn');
-console.log(menuBtn);
 
+
+
+// 데스크탑 네비게이션 메뉴 클릭 효과
 for (let i = 0; i < menuBtn.length; i++){
   $('.menu-btn').eq(i).on('click', function(){
     $('.menu-btn').removeClass('clicked');
