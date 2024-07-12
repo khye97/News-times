@@ -119,6 +119,12 @@ a {
   border-radius: 3px;
 }
 
+.clicked {
+  background-color: #454545 !important;
+  color: #fff;
+  border-radius: 3px;
+}
+
 .news-item {
   border-bottom: 2px solid black;
   padding: 1em;

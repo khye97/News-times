@@ -10,7 +10,15 @@ let totalResults = 0;
 let page = 1;
 const pageSize = 10;
 const groupSize = 5;
+let menuBtn = document.querySelectorAll('.menu-btn');
+console.log(menuBtn);
 
+for (let i = 0; i < menuBtn.length; i++){
+  $('.menu-btn').eq(i).on('click', function(){
+    $('.menu-btn').removeClass('clicked');
+    $('.menu-btn').eq(i).addClass('clicked');
+  })
+}
 
 // 각 메뉴 버튼에 카테고리 함수 부착
 menus.forEach(menu => menu.addEventListener('click', (event) => getNewsByCategory(event)));
