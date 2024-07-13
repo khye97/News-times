@@ -22,6 +22,7 @@ for (let i = 0; i < menuBtn.length; i++){
   })
 }
 
+
 // 각 메뉴 버튼에 카테고리 함수 부착
 menus.forEach(menu => menu.addEventListener('click', (event) => getNewsByCategory(event)));
 
@@ -34,6 +35,15 @@ document.querySelector('.go-btn').addEventListener('click', () => searchKeyword(
 document.getElementById("search-input").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     searchKeyword();
+  }
+});
+
+
+// 메인 로고 클릭시 최초 뉴스 재로드
+document.getElementById('main-logo').addEventListener('click', () => {
+  getLatestNews()
+  for (let i = 0; i < menuBtn.length; i++){
+    document.querySelectorAll('.menu-btn')[i].classList.remove('clicked');
   }
 });
 
@@ -111,7 +121,7 @@ const render = () => {
         ? "image/no_img.jpg" : news.urlToImage}>
     </div>
     <div class="col-lg-8">
-      <a href="#" class="title"><h2>${news.title}</h2></a>
+      <a href=${news.url} target=_blank class="title"><h2>${news.title}</h2></a>
       <p>${news.description == null || news.description == ""
         ? "내용없음"
         : news.description.length > 200

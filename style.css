@@ -95,6 +95,10 @@ a {
   justify-content: center;
 }
 
+#main-logo {
+  cursor: pointer;
+}
+
 .head-line svg {
   width: 400px;
 }
