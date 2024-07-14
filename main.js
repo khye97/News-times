@@ -155,7 +155,8 @@ const paginationRender = () => {
   const firstPage = lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
   let paginationHTML = ``;
 
-  if (firstPage >= 6){
+  // 이전 페이지로
+  if (page >= 2){
     paginationHTML = `<li class="page-item" onclick="moveToPage(1)"><a class="page-link" href="#">&lt&lt</a></li>
     <li class="page-item" onclick="moveToPage(${page - 1})"><a class="page-link" href="#">&lt</a></li>`;
   }
@@ -164,7 +165,8 @@ const paginationRender = () => {
     paginationHTML += `<li class="page-item ${i === page ? 'active' : ''}" onclick="moveToPage(${i})"><a class="page-link" href="#">${i}</a></li>`;
   }
 
-  if (lastPage < totalPages){
+  // 다음 페이지로
+  if (lastPage < totalPages || page <= totalPages - 1){
     paginationHTML += `<li class="page-item" onclick="moveToPage(${page + 1})"><a class="page-link" href="#">&gt</a></li>
     <li class="page-item" onclick="moveToPage(${totalPages})"><a class="page-link" href="#">&gt&gt</a></li>`;
   }
